@@ -1,5 +1,6 @@
 package utils;
 
+import objects.CellCnfVar;
 import objects.ClueSum;
 import objects.CnfVar;
 
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class KakuroParser {
-    private static final HashMap<Integer, CnfVar> indexToCnf = new HashMap<>();
+    private static final HashMap<Integer, CellCnfVar> indexToCnf = new HashMap<>();
 
     public static List<ClueSum> parse(String filePath) {
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
@@ -27,7 +28,7 @@ public class KakuroParser {
         ClueSum block = new ClueSum(val);
         while (tokenizer.hasMoreTokens()) {
             int index = Integer.parseInt(tokenizer.nextToken());
-            CnfVar temp = indexToCnf.computeIfAbsent(index, CnfVar::new);
+            CellCnfVar temp = indexToCnf.computeIfAbsent(index, CellCnfVar::new);
             temp.updateMax(val);
             block.addCnfVar(temp);
         }
