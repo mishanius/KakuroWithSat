@@ -18,23 +18,14 @@ the result will be in a newly created text file.
   
   ```
   6 1 2
-  
   17 3 4 5 6
-  
   3 7 8
-  
   4 9 10
-  
   14 11 12 13 14
-  
   11 3 7
-  
   8 4 8 11
-  
   3 1 5
-  
   18 2 6 9 13
-  
   3 10 14
   ```
   
