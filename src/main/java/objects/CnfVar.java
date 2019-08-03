@@ -1,15 +1,24 @@
 package objects;
-
+enum VarType{
+    CELL,
+    PARTITION,
+    ROW,
+    COL
+}
 public class CnfVar {
-    int index;
-    int maxVal = 0;
-
+    private int index;
+    private int maxVal = 0;
+    private VarType type;
     public CnfVar(int index) {
         this.index = index;
     }
 
     public CnfVar(String index) {
         this.index = Integer.parseInt(index);
+    }
+
+    public VarType getType() {
+        return type;
     }
 
     @Override
