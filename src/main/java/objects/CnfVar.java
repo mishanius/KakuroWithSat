@@ -1,14 +1,8 @@
 package objects;
-enum VarType{
-    CELL,
-    PARTITION,
-    ROW,
-    COL
-}
+
 public class CnfVar {
     private int index;
     private int maxVal = 0;
-    private VarType type;
     public CnfVar(int index) {
         this.index = index;
     }
@@ -17,9 +11,6 @@ public class CnfVar {
         this.index = Integer.parseInt(index);
     }
 
-    public VarType getType() {
-        return type;
-    }
 
     @Override
     public String toString() {
@@ -27,7 +18,7 @@ public class CnfVar {
     }
 
     /**
-     * for a cnf var that representing some cell
+     * for a cnf var that represents some cell
      * the max val is min({clue.sum | this in clue.vars})
      * **/
     public void updateMax(int val){

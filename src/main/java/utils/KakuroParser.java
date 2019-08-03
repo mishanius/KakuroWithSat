@@ -23,10 +23,18 @@ public class KakuroParser {
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
             return stream.map(KakuroParser::parseLine).collect(Collectors.toList());
         } catch (IOException e) {
-            throw new RuntimeException("can't open file");
+               throw new RuntimeException("can't open file");
         }
     }
 
+    /**
+     * parses a String line into a {@link ClueSum}
+     * the line should be in the form <sum> <cell#1> ....<cell#i>
+     * each cell becomes {@link CnfVar}
+     * @implNote multiple {@link ClueSum} can hold the same cnfvar
+     * @param line : a String
+     * @return {@link ClueSum}
+     **/
     private static ClueSum parseLine(String line) {
         StringTokenizer tokenizer = new StringTokenizer(line, " ");
         int val = Integer.parseInt(tokenizer.nextToken());
