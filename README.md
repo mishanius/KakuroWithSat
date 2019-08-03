@@ -4,8 +4,15 @@ Solving the kakuro puzle using sat4j
 1. sat4j
 2. guawa
 3. java 8
+4. maven
 ## Current usage
-``java -jar KakuroWithSat <input file path> verbose(optional)``
+from the project root directory compile with maven:
+
+```mvn clean compile assembly:single```
+
+go to project\target and run:
+
+```java -jar KakuroWithSat <input file path> verbose(optional)```
 
 use verbose to see the actual cnf file that is generated before running the sat4j
 
