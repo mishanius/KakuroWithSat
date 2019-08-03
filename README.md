@@ -13,6 +13,7 @@ the result will be in a newly created text file.
 ### Input file format:
 - first all cells in the game should be enumarated
 - each line represents a diffarent clue the line should be in the form <sum> <cell#1> ....<cell#i>
+  
   example:
   
   ```
