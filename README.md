@@ -15,7 +15,7 @@ Solving the kakuro puzle using sat4j
 
 ```java -jar KakuroWithSat <input file path> verbose(optional)```
 
-use verbose to see the actual cnf file that is generated before running the sat4j\n
+use verbose to see the actual cnf file that is generated before running the sat4j<br />
 the result will be in a newly created text file.
 ### Input file format:
 - first all cells in the game should be enumarated
