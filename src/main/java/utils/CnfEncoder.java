@@ -97,7 +97,7 @@ public class CnfEncoder {
 
     /**
      *
-     * generates clauses for all possible partitions of {1,2,3,4,5,6,7,8,9} in the size of {@link ClueSum}.getvars()
+     * generates clauses for all possible partitions of {1,2,3,4,5,6,7,8,9} in the size of {@link ClueSum}.getVars()
      * example for clue sum=5 that have 2 cells we will generate the following:
      * p1 = (2,3), p2=(1,4)
      * the final clause is :
