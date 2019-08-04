@@ -1,5 +1,5 @@
 # KakuroWithSat
-Solving the kakuro puzle using sat4j
+Solving the kakuro puzzle using sat4j
 ## Dependencies
 1. sat4j
 2. guawa
