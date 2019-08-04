@@ -37,6 +37,7 @@ public class Main {
                 reader.decode(problem.model(), out);
             } else {
                 System.out.println("Unsatisfiable !");
+                KakuroParser.parseSolutionToFile(null, null, "kakuroSolution_michael_kerem.txt");
             }
         } catch (Exception e) {
             KakuroParser.parseSolutionToFile(null, null, "kakuroSolution_michael_kerem.txt");
