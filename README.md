@@ -3,7 +3,7 @@ Solving the kakuro puzzle using sat4j
 ## Dependencies
 1. sat4j
 2. guava
-3. java 8
+3. java jdk 8 (or higher)
 4. maven
 ## Usage
 - clone repo
