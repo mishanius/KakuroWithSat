@@ -57,13 +57,18 @@ public class KakuroParser {
         FileWriter fileWriter = new FileWriter(fileName);
         PrintWriter printWriter = new PrintWriter(fileWriter);
         HashSet<String> printed = new HashSet<>();
-        board.stream()
-                .flatMap(c -> c.getOrderdvars()
-                        .stream())
-                .map(v -> v.toString() + " " + getValue(v,  solvedProblem))
-                .filter(s->!printed.contains(s))
-                .peek(printed::add)
-                .forEach(printWriter::println);
+        if(board==null || solvedProblem==null){
+            printWriter.println("no solution");
+        }
+        else {
+            board.stream()
+                    .flatMap(c -> c.getOrderdvars()
+                            .stream())
+                    .map(v -> v.toString() + " " + getValue(v, solvedProblem))
+                    .filter(s -> !printed.contains(s))
+                    .peek(printed::add)
+                    .forEach(printWriter::println);
+        }
         printWriter.close();
     }
 

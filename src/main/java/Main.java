@@ -38,16 +38,8 @@ public class Main {
             } else {
                 System.out.println("Unsatisfiable !");
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseFormatException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ContradictionException e) {
-            System.out.println("Unsatisfiable (trivial)!");
-        } catch (TimeoutException e) {
-            System.out.println("Timeout, sorry!");
+        } catch (Exception e) {
+            KakuroParser.parseSolutionToFile(null, null, "kakuroSolution_michael_kerem.txt");
         } finally {
             if (!(args.length > 1 && args[1].equals("verbose"))) {
                 try {
