@@ -2,7 +2,7 @@
 Solving the kakuro puzzle using sat4j
 ## Dependencies
 1. sat4j
-2. guawa
+2. guava
 3. java 8
 4. maven
 ## Usage
