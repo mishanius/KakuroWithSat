@@ -36,15 +36,22 @@ public class KakuroParser {
      * @return {@link ClueSum}
      **/
     private static ClueSum parseLine(String line) {
-        StringTokenizer tokenizer = new StringTokenizer(line, " ");
-        int val = Integer.parseInt(tokenizer.nextToken());
+        String[] values = line.split("\\s+");
+//        StringTokenizer tokenizer = new StringTokenizer(line, " ");
+        int val = Integer.parseInt(values[0]);//Integer.parseInt(tokenizer.nextToken());
         ClueSum block = new ClueSum(val, lineCount);
-        while (tokenizer.hasMoreTokens()) {
-            int index = Integer.parseInt(tokenizer.nextToken());
+        for(int i=1; i<values.length; i++){
+            int index = Integer.parseInt(values[i]);
             CnfVar temp = indexToCnf.computeIfAbsent(index, CnfVar::new);
             temp.updateMax(val);
             block.addCnfVar(temp);
         }
+//        while (tokenizer.hasMoreTokens()) {
+//            int index = Integer.parseInt(tokenizer.nextToken());
+//            CnfVar temp = indexToCnf.computeIfAbsent(index, CnfVar::new);
+//            temp.updateMax(val);
+//            block.addCnfVar(temp);
+//        }
         lineCount++;
         return block;
     }
