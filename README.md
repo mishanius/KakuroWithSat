@@ -1,5 +1,8 @@
 # KakuroWithSat
 Solving the kakuro puzzle using sat4j
+
+This was my final project as part of the honored students course in BGU (C.S).
+
 ## Dependencies
 1. sat4j
 2. guava
